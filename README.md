@@ -53,6 +53,8 @@ HTML Structure:
 
 The HTML structure includes a header with the site's name and cart button, a product list container, a modal for displaying the cart, and a footer with the copyright notice.
 Each product card contains the product image, title, price, and "Add to Cart" button.
+
+
 External Libraries:
 
 The code references external libraries, such as Bootstrap and jQuery, for styling and functionality.
