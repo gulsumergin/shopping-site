@@ -15,4 +15,4 @@ JavaScript code for fetching products, handling searches, updating the cart, and
 
 ----------------------------------------------------------------------------------------------------
 
-
+https://gulsumergin.github.io/shopping-site/shopping%20site/ 
