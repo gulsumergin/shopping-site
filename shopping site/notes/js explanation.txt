@@ -1,0 +1,9 @@
+Display Products: The displayProducts function generates HTML for product cards and appends them to the main element on your page. Each product card displays the product's image, title, price, and an "Add to Cart" button.
+
+Add to Cart: The addToCart function adds the selected product to the cart list and updates it on the user interface. It listens for clicks on "Add to Cart" buttons and then adds the corresponding product to the cart list.
+
+Fetch Data: The script fetches data from the https://fakestoreapi.com/products API and populates the data array with the retrieved product information. It then calls the displayProducts function to show these products on the page.
+
+API Calls: The code also demonstrates how to make different API calls, like fetching product categories, sorting products, fetching products for a specific category, and even making a DELETE request for a specific product.
+
+Event Listeners: The script adds event listeners to the "Add to Cart" buttons. When a user clicks one of these buttons, it retrieves the product's ID from the button's data attribute, finds the corresponding product in the data array, and adds it to the cart using the addToCart function.

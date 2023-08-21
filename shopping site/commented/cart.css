@@ -1,0 +1,89 @@
+/* cart.css */
+
+/* Add custom styles for the cart page */
+
+/* Container for the cart items */
+.container {
+  padding: 20px 20px;
+ 
+}
+
+/* Style for the cart items row */
+#cart-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Style for individual cart items */
+.cart-item {
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(33.33% - 20px); /* Show 3 items per row */
+  max-width: 250px; /* Limit the width of each item */
+}
+
+/* Style for cart item image */
+.cart-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style for cart item details */
+.cart-item-details {
+  margin-top: 10px;
+}
+
+/* Style for cart item title */
+.cart-item-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style for cart item price */
+.cart-item-price {
+  font-size: 14px;
+  color: #007bff;
+}
+
+/* Style for cart total */
+.cart-total {
+  margin-top: 40px;
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Style for the "Sepetim" heading */
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: red;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 767px) {
+  /* Adjust cart items layout for smaller screens */
+  #cart-items {
+    justify-content: center;
+  }
+
+  .cart-item {
+    width: calc(50% - 20px); /* Show 2 items per row */
+  }
+}
+
+@media (max-width: 575px) {
+  /* Further adjust cart items layout for smallest screens */
+  .cart-item {
+    width: 100%; /* Show 1 item per row */
+  }
+}

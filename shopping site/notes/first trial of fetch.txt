@@ -1,0 +1,124 @@
+const mainElement = document.querySelector('main');
+
+let data = []; // Ürün verilerini saklamak için bir dizi
+
+fetch('https://fakestoreapi.com/products')
+    .then(response => response.json())
+    .then(responseData => {
+        data = responseData; // Ürün verilerini diziye atayalım
+        
+        const productContainer = document.createElement('div'); // Ana ürün container'ı
+        productContainer.classList.add('container'); // Bootstrap container sınıfı
+        productContainer.innerHTML = `
+            <div class="row">
+                <!-- Ürün kartları buraya gelecek -->
+            </div>
+        `;
+
+        const productRow = productContainer.querySelector('.row'); // Ürünlerin ekleneceği satır
+        data.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.classList.add('col-md-4', 'mb-4'); // Bootstrap grid sınıfı ve margin eklemek için 'mb-4'
+            productCard.innerHTML = `
+                <div class="card">
+                    <img src="${product.image}" class="card-img-top" alt="${product.title}">
+                    <div class="card-body">
+                        <h5 class="card-title">${product.title}</h5>
+                        <p class="card-text">${product.price}</p>
+                        <button class="btn btn-primary btn-add-to-cart" data-id="${product.id}">Sepete Ekle</button>
+                    </div>
+                </div>
+            `;
+            productRow.appendChild(productCard);
+        });
+        mainElement.appendChild(productContainer);
+    })
+    .catch(error => {
+        console.error('Veri çekme hatası:', error);
+    });
+
+const addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
+const cart = []; // Boş sepet
+
+addToCartButtons.forEach(button => {
+  button.addEventListener('click', event => {
+      const productId = event.target.getAttribute('data-id');
+      const selectedProduct = data.find(product => product.id === parseInt(productId));
+
+      if (selectedProduct) {
+          cart.push(selectedProduct);
+          console.log('Ürün sepete eklendi:', selectedProduct);
+
+          // Arayüze eklenen ürünleri gösterme (örneğin bir listede)
+          const cartList = document.querySelector('.cart-list');
+          const cartItem = document.createElement('li');
+          cartItem.textContent = selectedProduct.title;
+          cartList.appendChild(cartItem);
+      } else {
+          console.log('Ürün bulunamadı.');
+      }
+  });
+});
+
+
+// Yeni HTTP isteği
+fetch('https://fakestoreapi.com/products/1')
+    .then(res => res.json())
+    .then(json => console.log(json))
+    .catch(error => {
+        console.error('Veri çekme hatası:', error);
+    });
+
+// Diğer HTTP istekleri
+fetch('https://fakestoreapi.com/products/categories')
+    .then(res => res.json())
+    .then(json => console.log(json));
+
+fetch('https://fakestoreapi.com/products', {
+    method: "POST",
+    body: JSON.stringify({
+        title: 'test product',
+        price: 13.5,
+        description: 'lorem ipsum set',
+        image: 'https://i.pravatar.cc',
+        category: 'electronic'
+    })
+})
+    .then(res => res.json())
+    .then(json => console.log(json));
+
+// update product
+fetch('https://fakestoreapi.com/products/7', {
+    method: "PUT",
+    body: JSON.stringify({
+        title: 'test product',
+        price: 13.5,
+        description: 'lorem ipsum set',
+        image: 'https://i.pravatar.cc',
+        category: 'electronic'
+    })
+})
+    .then(res => res.json())
+    .then(json => console.log(json));
+
+fetch('https://fakestoreapi.com/products?limit=5')
+    .then(res => res.json())
+    .then(json => console.log(json));
+
+fetch('https://fakestoreapi.com/products?sort=desc')
+    .then(res => res.json())
+    .then(json => console.log(json));
+
+fetch('https://fakestoreapi.com/products/categories')
+    .then(res => res.json())
+    .then(json => console.log(json));
+
+fetch('https://fakestoreapi.com/products/category/jewelery')
+    .then(res => res.json())
+    .then(json => console.log(json));
+
+fetch('https://fakestoreapi.com/products/6', {
+    method: "DELETE"
+})
+    .then(res => res.json())
+    .then(json => console.log(json));

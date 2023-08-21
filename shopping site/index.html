@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping Site</title>
+    <link rel="icon" href="store.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Minimal Store</a>
+            <button class="btn btn-link cart-button" type="button" data-toggle="modal" data-target="#cartModal">
+                <img src="basket.png" width="30" height="30" alt="Shopping Basket">
+                <span class="cart-notification">0</span>
+            </button>
+            <span class="navbar-text ml-auto mr-3 total-amount">Total: 0 TL</span>
+        </nav>
+    </header>
+
+   <main class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="search-bar">
+                <input type="text" class="form-control" placeholder="Search...">
+                <button class="btn btn-primary search-button">Search</button>
+            </div>
+            <div class="row justify-content-center product-list">
+                <!-- Each product will be displayed as a column here -->
+                <div class="card">
+                    <img src="${product.image}" class="card-img-top" alt="${product.title}">
+                    <div class="card-body">
+                        <h5 class="card-title">${product.title}</h5>
+                        <p class="card-text">${product.price} TL</p>
+                        <div class="btn-container">
+                            <button class="btn btn-primary btn-add-to-cart" data-id="${product.id}">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat this card structure for each product -->
+            </div>
+        </div>
+    </div>
+</main>
+
+
+    <footer class="bg-light py-4">
+        <div class="container text-center">
+            <p>&copy; 2023 Shopping Site. All rights reserved.</p>
+        </div>
+    </footer>
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Shopping Basket</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Sepet öğeleri burada dinamik olarak görüntülenecek -->
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger btn-clear-cart">Clear All</button> <!-- Yeni düğme eklendi -->
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

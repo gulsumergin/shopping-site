@@ -1,0 +1,263 @@
+/* Renk Teması */
+body {
+  background-color: #2f3b485f;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* ... (previous styles remain the same) ... */
+
+.container {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+.row.justify-content-center.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 7px;
+  background-color: #070e335f;
+}
+
+
+
+/* Ürün Kartları */
+.card {
+  
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: rgba(147, 170, 178, 0.437);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: grid;
+  padding: auto;
+  align-items: center;
+  max-width: 100%; /* veya istediğiniz bir genişlik değeri */
+  margin: 0 auto; /* Sayfanın ortasında görüntülenmesini sağlar */
+}
+
+
+.card-title {
+  font-size: 1.2rem;
+  color: rgb(233, 233, 233);
+  margin-left: 5%;
+}
+
+.card-text {
+  color: rgb(233, 233, 233);
+  margin-left: 40px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  
+}
+
+.btn-add-to-cart {
+  border: none;
+  margin-right: 10px;
+}
+
+
+/* Navigasyon Çubuğu */
+.navbar {
+  padding: 10px 10px;
+  color: white;
+}
+
+.navbar-brand {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #210a433a;
+  font-size: 19px;
+  padding: 13px 13px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+
+
+
+/* ... (rest of the styles remain the same) ... */
+
+/* Buton Stilleri */
+.btn-container {
+  display: flex;
+  justify-content: flex-end; /* Align the button to the right within the container */
+  align-items: flex-end; /* Align the button to the bottom of the container */
+  padding: 10px 10px; /* Add padding to create space between content and button */
+}
+
+/* Buton Stilleri */
+.btn-primary {
+  background-color: #333036a5;
+  border: none;
+  margin-left: 14px;
+}
+
+
+/* Add styles for the search bar container */
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* Style for the search input */
+.form-control {
+  flex: 1;
+  margin-top: 16px;
+}
+
+/* Style for the search button */
+.search-button {
+  background-color: #b41835;
+  margin-top: 16px;
+  margin-left: 10px;
+  border: none;
+  color: white;
+}
+/* Responsive Tasarım */
+@media (max-width: 767px) {
+  .search-bar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .form-control {
+    margin-top: 0;
+    flex: initial;
+    width: 60%; /* Adjust as needed */
+  }
+
+  .search-button {
+    margin-top: 0;
+    margin-left: 10px;
+  }
+}
+
+/* Ürün kartları için stil tanımları */
+.product-card {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.col-md-4 {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  flex-direction: column; /* Stack content vertically */
+  max-width: 65%;
+  padding: 10px;
+  margin-top: 35px;
+  margin-left: 65px;
+  margin-bottom: 30px;
+}
+
+
+/* Alışveriş Sepeti Stili */
+.cart-button {
+  position: relative;
+ margin-inline-end: auto;
+}
+
+.cart-notification {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #dc3545;
+  color: white;
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+
+/* Add margin left to the delete button for spacing */
+.cart-item .btn-danger {
+  margin-top: 3px;
+  margin-left: 0px;
+}
+
+/* Place the "Remove" button on a new line below the product information */
+.cart-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.card-body {
+  display: grid;
+  padding: 10px 10px;
+  grid-template-rows: auto 1fr auto; /* Adjust as needed */
+  gap: 5px; /* Adjust the gap between grid items */
+  
+}
+
+
+
+
+
+/* Footer Stili */
+footer {
+  margin-top: 15px;
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
+  color: #6c757d;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 767px) {
+  .navbar-brand {
+    font-size: 20px;
+   
+  }
+
+ 
+  .card {
+    display: flex;
+    padding: 10px 10px;
+    align-items: center;
+    max-width: 400px; /* veya istediğiniz bir genişlik değeri */
+    margin: 0 auto; /* Sayfanın ortasında görüntülenmesini sağlar */
+  }
+  .card-title {
+    font-size: 1.2rem;
+    color: rgb(233, 233, 233);
+    margin-left: 5%;
+  }
+  
+  .card-text {
+    color: rgb(233, 233, 233);
+    margin-left: 40px;
+  }
+  
+  .btn-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .btn-add-to-cart {
+    background-color: #3f3b3bb3;
+    border: none;
+    margin-right: 10px;
+  }
+}
+
