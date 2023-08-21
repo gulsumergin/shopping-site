@@ -1,3 +1,5 @@
+https://gulsumergin.github.io/shopping-site/shopping%20site/ 
+
 Project Summary:
 
 This is a shopping website project that is still in progress for responsive design.
@@ -15,4 +17,4 @@ JavaScript code for fetching products, handling searches, updating the cart, and
 
 ----------------------------------------------------------------------------------------------------
 
-https://gulsumergin.github.io/shopping-site/shopping%20site/ 
+
